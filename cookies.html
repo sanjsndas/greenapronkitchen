@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Green Apron Kitchen · Cookies Policy</title>
+  <!-- Font & minimal icons (only for visual hierarchy) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    /* ----- unique, reading-first design system (same as main) ----- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #faf7f2;
+      color: #1f2a1f;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      line-height: 1.7;
+      padding: 2rem 1.5rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 2.5rem 3rem;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
+      border-radius: 28px;
+    }
+
+    /* typography – serif for headlines, clean sans for body */
+    h1, h2, h3, h4 {
+      font-family: 'Instrument Serif', serif;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+      color: #1e2b1e;
+    }
+
+    h1 {
+      font-size: 3.2rem;
+      margin-bottom: 0.4rem;
+    }
+    h2 {
+      font-size: 2.2rem;
+      margin-top: 2.8rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #e4ddd2;
+      padding-bottom: 0.4rem;
+    }
+    h3 {
+      font-size: 1.6rem;
+      margin-top: 2rem;
+      margin-bottom: 0.6rem;
+      font-weight: 500;
+    }
+    p {
+      margin-bottom: 1.4rem;
+      font-size: 1.05rem;
+      color: #2f3a2f;
+    }
+    .small-meta {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #6a7a6a;
+      margin-bottom: 0.25rem;
+    }
+
+    /* ----- header / navigation (minimal, clean) ----- */
+    .site-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+      border-bottom: 1px solid #eae3d8;
+      padding-bottom: 1.2rem;
+    }
+    .logo {
+      font-family: 'Instrument Serif', serif;
+      font-size: 2.2rem;
+      font-weight: 400;
+      color: #2f4b2f;
+      letter-spacing: -0.02em;
+    }
+    .logo span {
+      background: #2f4b2f;
+      color: #faf7f2;
+      padding: 0.1rem 0.6rem;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      margin-left: 8px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #2f3a2f;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 0.2rem;
+      transition: 0.2s;
+    }
+    .nav-links a:hover {
+      border-bottom-color: #7f9f7f;
+      color: #1f2a1f;
+    }
+
+    /* cookies specific */
+    .cookie-highlight {
+      background: #f3efe9;
+      padding: 1.8rem 2.2rem;
+      border-radius: 24px;
+      margin: 1.8rem 0 2.5rem;
+      border-left: 6px solid #7f9f7f;
+    }
+    .cookie-highlight p:last-child {
+      margin-bottom: 0;
+    }
+
+    .cookie-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0 1.5rem;
+      font-size: 0.95rem;
+    }
+    .cookie-table th {
+      background: #e4ddd2;
+      padding: 0.8rem 1rem;
+      text-align: left;
+      font-weight: 600;
+      color: #1f2a1f;
+    }
+    .cookie-table td {
+      padding: 0.8rem 1rem;
+      border-bottom: 1px solid #eae3d8;
+    }
+    .cookie-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #2f4b2f;
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.2rem 0.8rem;
+      border-radius: 40px;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .policy-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem 2rem;
+      background: #faf8f5;
+      padding: 1.8rem 2rem;
+      border-radius: 24px;
+      margin: 2rem 0 1rem;
+      border: 1px solid #ece6dd;
+    }
+    .policy-actions button {
+      background: transparent;
+      border: 1.5px solid #2f4b2f;
+      padding: 0.5rem 2rem;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 1rem;
+      color: #2f4b2f;
+      cursor: default;
+      transition: 0.15s;
+    }
+    .policy-actions button:hover {
+      background: #2f4b2f;
+      color: white;
+    }
+
+    /* footer */
+    footer {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 2px solid #e4ddd2;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      font-size: 0.9rem;
+      color: #5d6d5d;
+    }
+
+    @media (max-width: 800px) {
+      .container { padding: 1.5rem; }
+      .site-header { flex-direction: column; gap: 0.8rem; }
+      .nav-links { flex-wrap: wrap; gap: 1rem; }
+    }
+    @media (max-width: 480px) {
+      body { padding: 0.8rem; }
+      h1 { font-size: 2.4rem; }
+      .cookie-table { font-size: 0.85rem; }
+      .cookie-table td, .cookie-table th { padding: 0.5rem 0.6rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- header -->
+  <header class="site-header">
+    <div class="logo">Green Apron <span>kitchen</span></div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="terms.html">Terms Of Privacy</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="cookies.html">Cookies Policy</a>
+    </div>
+  </header>
+
+  <!-- page title -->
+  <h1>Cookies Policy</h1>
+  <p style="max-width: 700px;">We use cookies to improve your experience, remember preferences, and understand how you interact with Green Apron Kitchen. This policy explains what we collect and how you can manage your choices.</p>
+
+  <!-- highlight / summary -->
+  <div class="cookie-highlight">
+    <p><strong>🍪 Our approach is simple:</strong> we only use essential and functional cookies to keep the site running smoothly. No intrusive tracking or third-party data selling. You’re in control.</p>
+  </div>
+
+  <!-- cookie table -->
+  <h2>Types of cookies we use</h2>
+  <table class="cookie-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Purpose</th>
+        <th>Duration</th>
+        <th>Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>session_id</code></td>
+        <td>Maintains your session while you browse</td>
+        <td>Session</td>
+        <td><span class="badge">essential</span></td>
+      </tr>
+      <tr>
+        <td><code>pref_theme</code></td>
+        <td>Remembers your display preferences (light/dark)</td>
+        <td>1 year</td>
+        <td><span class="badge" style="background:#7f6b4b;">functional</span></td>
+      </tr>
+      <tr>
+        <td><code>ga_visit</code></td>
+        <td>Anonymous analytics to improve content</td>
+        <td>2 years</td>
+        <td><span class="badge" style="background:#5f7f6f;">analytics</span></td>
+      </tr>
+      <tr>
+        <td><code>recipe_fav</code></td>
+        <td>Saves your favorite recipes (local storage)</td>
+        <td>Persistent</td>
+        <td><span class="badge" style="background:#7f6b4b;">functional</span></td>
+      </tr>
+    </tbody>
+  </table>
+  <p style="font-size: 0.95rem; color: #4d604d;">We do not use advertising or tracking cookies from third-party networks. Our analytics are privacy‑first and aggregated.</p>
+
+  <!-- consent options (visual only) -->
+  <div class="policy-actions">
+    <div><strong>Your cookie preferences</strong> — you can update or withdraw consent anytime.</div>
+    <div style="display: flex; gap: 0.8rem; flex-wrap: wrap;">
+      <button>Accept all</button>
+      <button>Essential only</button>
+      <button>Manage settings</button>
+    </div>
+  </div>
+
+  <!-- detailed explanation -->
+  <h2>How we use cookie data</h2>
+  <p>We collect minimal data to ensure the site works correctly and to understand which recipes and articles are most popular. All data is anonymized and never shared with third parties for marketing purposes.</p>
+  <ul style="margin-left: 1.8rem; margin-bottom: 1.8rem; color: #2f3a2f;">
+    <li><strong>Essential:</strong> necessary for basic functionality (login, navigation).</li>
+    <li><strong>Functional:</strong> remember your preferences, like theme or saved recipes.</li>
+    <li><strong>Analytics:</strong> aggregate usage statistics to help us improve content.</li>
+  </ul>
+
+  <h2>Manage your cookies</h2>
+  <p>You can disable cookies in your browser settings at any time. However, some features may not work as expected. We recommend keeping essential cookies enabled for the best experience.</p>
+  <div style="background: #faf8f5; border-radius: 20px; padding: 1.2rem 1.8rem; border: 1px solid #ece6dd; margin: 1.5rem 0;">
+    <p style="margin: 0; font-size: 0.95rem;"><strong>🔒 Privacy first:</strong> We never sell or misuse your data. For more, see our <a href="privacy.html" style="color: #2f4b2f; text-decoration: underline;">Privacy Policy</a> and <a href="terms.html" style="color: #2f4b2f; text-decoration: underline;">Terms of Privacy</a>.</p>
+  </div>
+
+  <!-- extra: FAQ / quick links (cookie specific) -->
+  <div style="background: #f3efe9; border-radius: 24px; padding: 2rem 2.5rem; margin: 2.5rem 0;">
+    <h3 style="margin-top: 0;">Quick cookie FAQ</h3>
+    <div style="display: flex; flex-wrap: wrap; gap: 1.2rem 2.5rem; margin-top: 0.5rem;">
+      <div><strong>Do you use third-party cookies?</strong> No, we only use first-party cookies.</div>
+      <div><strong>Can I opt out?</strong> Yes — use your browser settings or our preference buttons above.</div>
+      <div><strong>How often do you update this policy?</strong> We review it yearly, or when regulations change.</div>
+      <div><strong>What about data from forms?</strong> That’s covered in our privacy policy.</div>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <footer>
+    <div>© 2026 Green Apron Kitchen · crafted with care</div>
+    <div style="display:flex; gap:1.5rem;">
+      <a href="#" style="text-decoration:none; color:#4d604d;">about</a>
+      <a href="#" style="text-decoration:none; color:#4d604d;">privacy</a>
+      <a href="#" style="text-decoration:none; color:#4d604d;">contact</a>
+    </div>
+  </footer>
+
+</div>
+<!-- end container -->
+</body>
+</html>

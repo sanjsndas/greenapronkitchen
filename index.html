@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Green Apron Kitchen · recipes that teach</title>
+  <!-- Font & minimal icons (only for visual hierarchy) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    /* ----- unique, reading-first design system ----- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #faf7f2;
+      color: #1f2a1f;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      line-height: 1.7;
+      padding: 2rem 1.5rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 2.5rem 3rem;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
+      border-radius: 28px;
+    }
+
+    /* typography – serif for headlines, clean sans for body */
+    h1, h2, h3, h4 {
+      font-family: 'Instrument Serif', serif;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+      color: #1e2b1e;
+    }
+
+    h1 {
+      font-size: 3.2rem;
+      margin-bottom: 0.4rem;
+    }
+    h2 {
+      font-size: 2.2rem;
+      margin-top: 2.8rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #e4ddd2;
+      padding-bottom: 0.4rem;
+    }
+    h3 {
+      font-size: 1.6rem;
+      margin-top: 2rem;
+      margin-bottom: 0.6rem;
+      font-weight: 500;
+    }
+    p {
+      margin-bottom: 1.4rem;
+      font-size: 1.05rem;
+      color: #2f3a2f;
+    }
+    .small-meta {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #6a7a6a;
+      margin-bottom: 0.25rem;
+    }
+
+    /* ----- header / navigation (minimal, clean) ----- */
+    .site-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+      border-bottom: 1px solid #eae3d8;
+      padding-bottom: 1.2rem;
+    }
+    .logo {
+      font-family: 'Instrument Serif', serif;
+      font-size: 2.2rem;
+      font-weight: 400;
+      color: #2f4b2f;
+      letter-spacing: -0.02em;
+    }
+    .logo span {
+      background: #2f4b2f;
+      color: #faf7f2;
+      padding: 0.1rem 0.6rem;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      margin-left: 8px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #2f3a2f;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 0.2rem;
+      transition: 0.2s;
+    }
+    .nav-links a:hover {
+      border-bottom-color: #7f9f7f;
+      color: #1f2a1f;
+    }
+
+    /* ----- hero – content-rich, minimal image ----- */
+    .hero {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 2.5rem;
+      background: #f3efe9;
+      padding: 2.5rem 2.8rem;
+      border-radius: 24px;
+      margin-bottom: 3.5rem;
+      align-items: center;
+    }
+    .hero-text h1 {
+      font-size: 2.8rem;
+      margin-bottom: 0.75rem;
+    }
+    .hero-text p {
+      font-size: 1.15rem;
+      color: #2d3a2d;
+      max-width: 90%;
+    }
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem 1.2rem;
+      margin-top: 1.2rem;
+    }
+    .hero-tags span {
+      background: #ffffffcc;
+      backdrop-filter: blur(2px);
+      padding: 0.2rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #1f2a1f;
+      border: 1px solid #d6cdbf;
+    }
+    .hero-image {
+      background: #d9d0c2;
+      height: 180px;
+      border-radius: 20px;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" width="400" height="200"><rect width="400" height="200" fill="%23d9d0c2"/><circle cx="120" cy="100" r="40" fill="%23b7a78e" opacity="0.5"/><circle cx="280" cy="100" r="50" fill="%23a7927a" opacity="0.4"/><rect x="180" y="70" width="40" height="70" fill="%2396846b" opacity="0.5"/><circle cx="320" cy="130" r="30" fill="%238b7962" opacity="0.4"/></svg>');
+      background-size: cover;
+      background-blend-mode: overlay;
+      border: 1px solid #cfc3b3;
+    }
+
+    /* featured articles – cards with text priority */
+    .section-title {
+      font-family: 'Instrument Serif', serif;
+      font-size: 2rem;
+      margin-top: 2.8rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+    }
+    .section-title small {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: #6a7a6a;
+      letter-spacing: 0.02em;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    .card {
+      background: #faf8f5;
+      padding: 1.6rem 1.8rem 2rem;
+      border-radius: 20px;
+      border: 1px solid #ece6dd;
+      transition: 0.15s ease;
+    }
+    .card:hover {
+      background: #f6f2eb;
+      border-color: #cdc0b0;
+    }
+    .card .cat {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #7f8f7f;
+      border-bottom: 1px dashed #d6cdbf;
+      padding-bottom: 0.4rem;
+      margin-bottom: 0.8rem;
+      display: inline-block;
+    }
+    .card h3 {
+      font-size: 1.5rem;
+      margin-top: 0.2rem;
+      margin-bottom: 0.4rem;
+    }
+    .card p {
+      font-size: 0.98rem;
+      color: #3b483b;
+      margin-bottom: 1rem;
+    }
+    .card .meta {
+      font-size: 0.8rem;
+      color: #6f806f;
+      border-top: 1px solid #e4ddd2;
+      padding-top: 0.8rem;
+      margin-top: 0.8rem;
+    }
+    .read-link {
+      font-weight: 600;
+      color: #2f4b2f;
+      text-decoration: none;
+      border-bottom: 1.5px solid #b7c9b7;
+    }
+    .read-link:hover {
+      border-bottom-color: #2f4b2f;
+    }
+
+    /* category image (only 1) */
+    .category-spot {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      background: #f0ebe3;
+      border-radius: 24px;
+      padding: 1.8rem 2.5rem;
+      margin: 2.5rem 0;
+    }
+    .category-spot .cat-icon {
+      flex-shrink: 0;
+      width: 100px;
+      height: 100px;
+      background: #c4b8a8;
+      border-radius: 40px;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23c4b8a8"/><circle cx="40" cy="40" r="20" fill="%23a8947c"/><rect x="30" y="70" width="40" height="20" fill="%239c8870"/><circle cx="70" cy="30" r="14" fill="%2396846b"/></svg>');
+      background-size: cover;
+      border: 1px solid #b3a390;
+    }
+    .category-spot h3 {
+      margin-top: 0;
+      font-size: 1.8rem;
+    }
+    .category-spot p {
+      margin-bottom: 0;
+    }
+
+    /* tables, checklists, FAQ */
+    .table-wrap {
+      background: #f3efe9;
+      border-radius: 18px;
+      padding: 1.5rem 1.8rem;
+      margin: 2rem 0;
+      border: 1px solid #e4ddd2;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.98rem;
+    }
+    th {
+      text-align: left;
+      padding: 0.7rem 0.4rem 0.3rem 0;
+      border-bottom: 2px solid #cbc0b0;
+      font-weight: 600;
+      color: #1f2a1f;
+    }
+    td {
+      padding: 0.6rem 0.4rem 0.6rem 0;
+      border-bottom: 1px solid #dbd2c5;
+    }
+    .checklist {
+      list-style: none;
+      margin: 1.2rem 0 1.8rem 0;
+      padding-left: 0;
+    }
+    .checklist li {
+      padding: 0.4rem 0 0.4rem 2rem;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%232f4b2f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>') left center no-repeat;
+      background-size: 1.2rem;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #e4ddd2;
+      padding: 1.2rem 0;
+    }
+    .faq-item strong {
+      display: block;
+      font-size: 1.1rem;
+      font-family: 'Instrument Serif', serif;
+      font-weight: 500;
+      color: #1e2b1e;
+    }
+    .faq-item p {
+      margin-top: 0.3rem;
+      margin-bottom: 0;
+      color: #3d4a3d;
+    }
+
+    .newsletter {
+      background: #e8e1d7;
+      border-radius: 40px;
+      padding: 2.5rem 3rem;
+      margin: 3rem 0 1.5rem;
+      text-align: center;
+    }
+    .newsletter h3 {
+      margin-top: 0;
+      font-size: 2rem;
+    }
+    .newsletter input {
+      background: white;
+      border: 1px solid #c9bdb0;
+      padding: 0.7rem 1.2rem;
+      border-radius: 60px;
+      font-size: 1rem;
+      width: 260px;
+      max-width: 80%;
+      margin-right: 0.5rem;
+    }
+    .newsletter button {
+      background: #2f4b2f;
+      border: none;
+      color: white;
+      padding: 0.7rem 1.8rem;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: default;
+    }
+
+    footer {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 2px solid #e4ddd2;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      font-size: 0.9rem;
+      color: #5d6d5d;
+    }
+
+    /* responsive */
+    @media (max-width: 800px) {
+      .container { padding: 1.5rem; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-image { height: 140px; }
+      .site-header { flex-direction: column; gap: 0.8rem; }
+      .nav-links { flex-wrap: wrap; gap: 1rem; }
+      .category-spot { flex-direction: column; text-align: center; }
+      .hero-text p { max-width: 100%; }
+    }
+    @media (max-width: 480px) {
+      body { padding: 0.8rem; }
+      h1 { font-size: 2.4rem; }
+    }
+
+    /* extra: only 4 images total (hero, featured, category, infographic) */
+    .infographic-box {
+      background: #f3efe9;
+      border-radius: 20px;
+      padding: 1.8rem 2.2rem;
+      margin: 2rem 0;
+      border-left: 8px solid #7f9f7f;
+      font-style: italic;
+    }
+    .infographic-box strong {
+      font-style: normal;
+      font-weight: 600;
+      color: #1f2a1f;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- header -->
+  <header class="site-header">
+    <div class="logo">Green Apron <span>kitchen</span></div>
+    <div class="nav-links">
+      <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="terms.html">Terms Of Privacy</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+					<li><a href="cookies.html">Cookies Policy</a></li>
+    </div>
+  </header>
+
+  <!-- 1. HERO (with hero image) -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Cook with intuition, not just instructions</h1>
+      <p>Green Apron Kitchen is a recipe blog built for cooks who want to understand the <em>why</em> behind every dish. Thousands of home cooks trust our techniques, from knife skills to pastry science.</p>
+      <div class="hero-tags">
+        <span>#seasonal</span>
+        <span>#fromscratch</span>
+        <span>#vegetableforward</span>
+        <span>#breadscience</span>
+      </div>
+    </div>
+    <div class="hero-image" role="img" aria-label="hero image: fresh produce and herbs"></div>
+  </section>
+
+  <!-- 2. FEATURED ARTICLES (with 1 featured image inside card) -->
+  <div class="section-title">Featured Articles <small>editor’s picks</small></div>
+  <div class="card-grid">
+    <div class="card">
+      <div class="cat">technique</div>
+      <h3>The Art of Slow Fermentation</h3>
+      <p>How time and temperature transform flour and water into complex, digestible bread. A deep dive into wild yeast and cold proofing.</p>
+      <div style="background: #d9d0c2; height: 100px; border-radius: 16px; margin: 0.8rem 0; background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100"><rect width="300" height="100" fill="%23d9d0c2"/><ellipse cx="80" cy="50" rx="40" ry="25" fill="%23b7a78e" opacity="0.7"/><ellipse cx="200" cy="50" rx="50" ry="30" fill="%23a7927a" opacity="0.6"/></svg>'); background-size: cover;"></div>
+      <div class="meta">30 min read · 12 steps</div>
+      <a href="#" class="read-link">read full guide →</a>
+    </div>
+    <div class="card">
+      <div class="cat">vegetables</div>
+      <h3>Root to Stem: Carrot Greens Pesto</h3>
+      <p>Stop throwing away the tops. This vibrant pesto uses every part of the carrot – zero waste, maximum flavor. Plus a twist with hazelnuts.</p>
+      <div class="meta">18 min · 5 ingredients</div>
+      <a href="#" class="read-link">get recipe →</a>
+    </div>
+    <div class="card">
+      <div class="cat">dessert</div>
+      <h3>Olive Oil Cake with Citrus Syrup</h3>
+      <p>A Mediterranean classic that defies expectations. The crumb is moist, fragrant, and endlessly adaptable. Our best version after 22 tests.</p>
+      <div class="meta">25 min · 9 ingredients</div>
+      <a href="#" class="read-link">bake now →</a>
+    </div>
+  </div>
+
+  <!-- 3. BEGINNER GUIDES + 4. EXPERT RESOURCES (combined as two cards) -->
+  <div class="section-title">Guides & Resources <small>for every level</small></div>
+  <div class="card-grid">
+    <div class="card">
+      <h3>🧑‍🍳 Beginner’s Pantry</h3>
+      <p>Essential equipment, staple ingredients, and the first 5 recipes every home cook should master. No fancy gadgets required.</p>
+      <a href="#" class="read-link">start here →</a>
+    </div>
+    <div class="card">
+      <h3>📘 Expert notebook</h3>
+      <p>Advanced fermentation, pastry ratios, and sauce mother recipes. For cooks who want to level up their intuition and technique.</p>
+      <a href="#" class="read-link">deep dive →</a>
+    </div>
+  </div>
+
+  <!-- 5. POPULAR CATEGORIES (with category image) -->
+  <div class="category-spot">
+    <div class="cat-icon" role="img" aria-label="category image: cooking utensils"></div>
+    <div>
+      <h3>Popular Categories</h3>
+      <p><strong>Seasonal cooking</strong> · <strong>Bread & pastry</strong> · <strong>Plant-forward</strong> · <strong>One-pot meals</strong> · <strong>Ferments</strong></p>
+      <p style="font-size:0.95rem; margin-top:0.5rem;">Explore 200+ recipes organized by technique, ingredient, and occasion.</p>
+    </div>
+  </div>
+
+  <!-- 6. TRENDING TOPICS + 7. LATEST ARTICLES (inline) -->
+  <div style="display: flex; flex-wrap: wrap; gap: 2rem; margin: 2.5rem 0;">
+    <div style="flex: 1 1 200px;">
+      <h3 style="margin-top:0;">🔥 Trending now</h3>
+      <ul style="list-style: none; padding-left:0;">
+        <li style="padding:0.3rem 0; border-bottom:1px solid #ede8e0;">· 5-minute miso butter</li>
+        <li style="padding:0.3rem 0; border-bottom:1px solid #ede8e0;">· Sourdough discard pancakes</li>
+        <li style="padding:0.3rem 0; border-bottom:1px solid #ede8e0;">· Crispy tofu two ways</li>
+        <li style="padding:0.3rem 0;">· Preserved lemons at home</li>
+      </ul>
+    </div>
+    <div style="flex: 2 1 300px;">
+      <h3 style="margin-top:0;">📰 Latest articles</h3>
+      <ul style="list-style: none; padding-left:0;">
+        <li style="padding:0.4rem 0; border-bottom:1px solid #ede8e0;">How to season a carbon steel pan · <span style="color:#6a7a6a;">2d ago</span></li>
+        <li style="padding:0.4rem 0; border-bottom:1px solid #ede8e0;">Fennel & orange salad with olives · <span style="color:#6a7a6a;">4d ago</span></li>
+        <li style="padding:0.4rem 0; border-bottom:1px solid #ede8e0;">Whole grain porridge – 3 variations · <span style="color:#6a7a6a;">6d ago</span></li>
+        <li style="padding:0.4rem 0;">Why you should brown your butter · <span style="color:#6a7a6a;">1w ago</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 8. IN-DEPTH TUTORIALS (text heavy) -->
+  <div class="section-title">In-Depth Tutorials <small>step-by-step mastery</small></div>
+  <div class="card-grid">
+    <div class="card"><h3>Knife skills: the claw grip</h3><p>Everything from julienne to brunoise. Improve speed and safety with our 5‑minute daily drill.</p><a href="#" class="read-link">watch & practice →</a></div>
+    <div class="card"><h3>Perfect roux, every time</h3><p>White, blond, brown – and how to use each. A visual guide to the foundation of sauces.</p><a href="#" class="read-link">master the roux →</a></div>
+  </div>
+
+  <!-- 9. RESOURCE HUB (with infographic image) -->
+  <div class="infographic-box">
+    <strong>📊 Resource hub — infographic</strong>
+    <p style="margin-top:0.5rem;">Flavor pairing matrix: herbs + proteins + acids.  (visual guide available in full article).</p>
+    <div style="background: #e4ddd2; height: 80px; border-radius: 20px; margin: 0.8rem 0; background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 80"><rect width="400" height="80" fill="%23e4ddd2"/><circle cx="50" cy="40" r="20" fill="%23b7a78e" opacity="0.6"/><circle cx="150" cy="40" r="20" fill="%239c8870" opacity="0.5"/><circle cx="250" cy="40" r="20" fill="%238b7962" opacity="0.5"/><circle cx="350" cy="40" r="20" fill="%237a6a55" opacity="0.4"/></svg>'); background-size: cover;"></div>
+    <p style="font-size:0.95rem;">Download our flavor wheel + substitution chart for 40+ ingredients.</p>
+  </div>
+
+  <!-- 10. FAQ -->
+  <div class="section-title">Frequently Asked Questions</div>
+  <div class="faq-item"><strong>Can I substitute whole wheat for all‑purpose?</strong><p>Yes, but expect denser results. For best outcome, use 50:50 or add extra hydration. We cover this in our flour guide.</p></div>
+  <div class="faq-item"><strong>How do I store fresh herbs?</strong><p>Treat like flowers: trim stems, place in water, cover loosely with a bag. Most herbs last 5‑7 days.</p></div>
+  <div class="faq-item"><strong>Why do my cookies spread too much?</strong><p>Chill the dough, use butter at cool room temp, and check your oven temperature. We have a full troubleshooting table.</p></div>
+
+  <!-- 11. NEWSLETTER -->
+  <div class="newsletter">
+    <h3>Weekly kitchen notes</h3>
+    <p style="max-width:600px; margin:0 auto 1.2rem;">One email per week with recipes, technique tips, and seasonal inspiration. No fluff.</p>
+    <input type="email" placeholder="you@example.com" aria-label="email" />
+    <button>Subscribe</button>
+    <p style="font-size:0.8rem; margin-top:1rem; opacity:0.7;">We respect your inbox. Unsubscribe anytime.</p>
+  </div>
+
+  <!-- 12. FOOTER -->
+  <footer>
+    <div>© 2026 Green Apron Kitchen · crafted with care</div>
+    <div style="display:flex; gap:1.5rem;">
+      <a href="#" style="text-decoration:none; color:#4d604d;">about</a>
+      <a href="#" style="text-decoration:none; color:#4d604d;">privacy</a>
+      <a href="#" style="text-decoration:none; color:#4d604d;">contact</a>
+    </div>
+  </footer>
+
+</div>
+<!-- end container -->
+</body>
+</html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Service · Green Apron Kitchen</title>
+  <!-- Fonts & minimal icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    /* ----- shared design system (same as homepage & about) ----- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #faf7f2;
+      color: #1f2a1f;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      line-height: 1.7;
+      padding: 2rem 1.5rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 2.5rem 3rem;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
+      border-radius: 28px;
+    }
+
+    /* typography */
+    h1, h2, h3, h4 {
+      font-family: 'Instrument Serif', serif;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+      color: #1e2b1e;
+    }
+
+    h1 {
+      font-size: 3.2rem;
+      margin-bottom: 0.4rem;
+    }
+    h2 {
+      font-size: 2.2rem;
+      margin-top: 2.8rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #e4ddd2;
+      padding-bottom: 0.4rem;
+    }
+    h3 {
+      font-size: 1.6rem;
+      margin-top: 2rem;
+      margin-bottom: 0.6rem;
+      font-weight: 500;
+    }
+    p {
+      margin-bottom: 1.4rem;
+      font-size: 1.05rem;
+      color: #2f3a2f;
+    }
+    .small-meta {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #6a7a6a;
+      margin-bottom: 0.25rem;
+    }
+
+    /* ----- header / navigation ----- */
+    .site-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+      border-bottom: 1px solid #eae3d8;
+      padding-bottom: 1.2rem;
+    }
+    .logo {
+      font-family: 'Instrument Serif', serif;
+      font-size: 2.2rem;
+      font-weight: 400;
+      color: #2f4b2f;
+      letter-spacing: -0.02em;
+    }
+    .logo span {
+      background: #2f4b2f;
+      color: #faf7f2;
+      padding: 0.1rem 0.6rem;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      margin-left: 8px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      font-weight: 500;
+      font-size: 0.95rem;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #2f3a2f;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 0.2rem;
+      transition: 0.2s;
+    }
+    .nav-links a:hover {
+      border-bottom-color: #7f9f7f;
+      color: #1f2a1f;
+    }
+
+    /* terms specific */
+    .terms-hero {
+      background: #f3efe9;
+      padding: 2.5rem 2.8rem;
+      border-radius: 24px;
+      margin-bottom: 2.5rem;
+    }
+    .terms-hero h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+    .terms-hero p {
+      font-size: 1.2rem;
+      max-width: 80%;
+      color: #2d3a2d;
+    }
+
+    .terms-content {
+      margin: 2rem 0;
+    }
+    .terms-content h2 {
+      margin-top: 2.4rem;
+    }
+    .terms-content ul, .terms-content ol {
+      margin: 0.8rem 0 1.8rem 1.8rem;
+      color: #2f3a2f;
+    }
+    .terms-content li {
+      margin-bottom: 0.5rem;
+      font-size: 1.05rem;
+    }
+    .highlight-box {
+      background: #faf8f5;
+      border-left: 6px solid #7f9f7f;
+      padding: 1.5rem 2rem;
+      border-radius: 16px;
+      margin: 2rem 0;
+    }
+    .highlight-box p {
+      margin-bottom: 0.4rem;
+    }
+
+    .newsletter {
+      background: #e8e1d7;
+      border-radius: 40px;
+      padding: 2.5rem 3rem;
+      margin: 3rem 0 1.5rem;
+      text-align: center;
+    }
+    .newsletter h3 {
+      margin-top: 0;
+      font-size: 2rem;
+    }
+    .newsletter input {
+      background: white;
+      border: 1px solid #c9bdb0;
+      padding: 0.7rem 1.2rem;
+      border-radius: 60px;
+      font-size: 1rem;
+      width: 260px;
+      max-width: 80%;
+      margin-right: 0.5rem;
+    }
+    .newsletter button {
+      background: #2f4b2f;
+      border: none;
+      color: white;
+      padding: 0.7rem 1.8rem;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: default;
+    }
+
+    footer {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 2px solid #e4ddd2;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      font-size: 0.9rem;
+      color: #5d6d5d;
+    }
+    footer a {
+      text-decoration: none;
+      color: #4d604d;
+    }
+
+    /* responsive */
+    @media (max-width: 800px) {
+      .container { padding: 1.5rem; }
+      .terms-hero p { max-width: 100%; }
+      .site-header { flex-direction: column; gap: 0.8rem; }
+      .nav-links { flex-wrap: wrap; gap: 1rem; }
+    }
+    @media (max-width: 480px) {
+      body { padding: 0.8rem; }
+      h1 { font-size: 2.4rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- header (identical) -->
+  <header class="site-header">
+    <div class="logo">Green Apron <span>kitchen</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="terms.html" style="border-bottom-color:#7f9f7f;">Terms Of Privacy</a></li>
+      <li><a href="privacy.html">Privacy Policy</a></li>
+      <li><a href="cookies.html">Cookies Policy</a></li>
+    </ul>
+  </header>
+
+  <!-- TERMS HERO -->
+  <section class="terms-hero">
+    <h1>Terms of service</h1>
+    <p>Welcome to Green Apron Kitchen. These terms outline the rules and regulations for the use of our website and services.</p>
+  </section>
+
+  <!-- TERMS CONTENT -->
+  <div class="terms-content">
+    <h2>1. Acceptance of Terms</h2>
+    <p>By accessing this website, you agree to be bound by these Terms of Service, all applicable laws and regulations, and agree that you are responsible for compliance with any applicable local laws. If you do not agree with any of these terms, you are prohibited from using or accessing this site.</p>
+
+    <h2>2. Intellectual Property</h2>
+    <p>All content published on Green Apron Kitchen — including recipes, text, graphics, logos, images, and software — is the property of Green Apron Kitchen and protected by copyright and intellectual property laws. You may not reproduce, distribute, or create derivative works without explicit written permission.</p>
+    <ul>
+      <li><strong>Personal use:</strong> You may print or save recipes for personal, non-commercial use.</li>
+      <li><strong>Commercial use:</strong> Any commercial use, republication, or redistribution of our content is strictly prohibited without prior consent.</li>
+    </ul>
+
+    <h2>3. User Accounts & Comments</h2>
+    <p>If you create an account or post comments on our site, you are responsible for maintaining the confidentiality of your account and password. You agree to accept responsibility for all activities that occur under your account. We reserve the right to remove or edit any content that violates our community guidelines.</p>
+    <div class="highlight-box">
+      <p><strong>Community guidelines:</strong> Be kind, stay on topic, and respect diverse opinions. We do not tolerate harassment, hate speech, or spam.</p>
+    </div>
+
+    <h2>4. Accuracy of Information</h2>
+    <p>We strive to ensure that all recipes, nutritional information, and articles are accurate and up-to-date. However, we do not warrant the completeness, reliability, or accuracy of any information on the site. Ingredients and cooking times may vary; always use your best judgment.</p>
+
+    <h2>5. Third-Party Links</h2>
+    <p>Our website may contain links to external sites that are not operated by us. We have no control over the content and practices of these sites and accept no responsibility for them. The inclusion of any link does not imply endorsement.</p>
+
+    <h2>6. Limitation of Liability</h2>
+    <p>Green Apron Kitchen is provided “as is” without any representations or warranties, express or implied. We will not be liable for any damages arising from the use of this website, including but not limited to direct, indirect, incidental, or consequential damages.</p>
+
+    <h2>7. Indemnification</h2>
+    <p>You agree to indemnify, defend, and hold harmless Green Apron Kitchen, its owners, employees, and affiliates from any claims, damages, or expenses (including legal fees) arising out of your use of the site or violation of these terms.</p>
+
+    <h2>8. Changes to Terms</h2>
+    <p>We reserve the right to update or modify these Terms of Service at any time without prior notice. Your continued use of the site after any changes constitutes acceptance of the new terms. We encourage you to review this page periodically.</p>
+
+    <h2>9. Governing Law</h2>
+    <p>These terms are governed by and construed in accordance with the laws of the jurisdiction in which Green Apron Kitchen operates, without regard to its conflict of law provisions.</p>
+
+    <h2>10. Contact Information</h2>
+    <p>If you have any questions about these Terms of Service, please <a href="contact.html" style="color:#2f4b2f; font-weight:600;">contact us</a>. We’re happy to help.</p>
+  </div>
+
+  <!-- NEWSLETTER (same as homepage) -->
+  <div class="newsletter">
+    <h3>Weekly kitchen notes</h3>
+    <p style="max-width:600px; margin:0 auto 1.2rem;">One email per week with recipes, technique tips, and seasonal inspiration. No fluff.</p>
+    <input type="email" placeholder="you@example.com" aria-label="email" />
+    <button>Subscribe</button>
+    <p style="font-size:0.8rem; margin-top:1rem; opacity:0.7;">We respect your inbox. Unsubscribe anytime.</p>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>© 2026 Green Apron Kitchen · crafted with care</div>
+    <div style="display:flex; gap:1.5rem;">
+      <a href="about.html">about</a>
+      <a href="privacy.html">privacy</a>
+      <a href="contact.html">contact</a>
+    </div>
+  </footer>
+
+</div>
+<!-- end container -->
+</body>
+</html>

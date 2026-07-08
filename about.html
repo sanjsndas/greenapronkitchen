@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About · Green Apron Kitchen</title>
+  <!-- Fonts & minimal icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    /* ----- shared design system (same as homepage) ----- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #faf7f2;
+      color: #1f2a1f;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      line-height: 1.7;
+      padding: 2rem 1.5rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 2.5rem 3rem;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
+      border-radius: 28px;
+    }
+
+    /* typography */
+    h1, h2, h3, h4 {
+      font-family: 'Instrument Serif', serif;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+      color: #1e2b1e;
+    }
+
+    h1 {
+      font-size: 3.2rem;
+      margin-bottom: 0.4rem;
+    }
+    h2 {
+      font-size: 2.2rem;
+      margin-top: 2.8rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #e4ddd2;
+      padding-bottom: 0.4rem;
+    }
+    h3 {
+      font-size: 1.6rem;
+      margin-top: 2rem;
+      margin-bottom: 0.6rem;
+      font-weight: 500;
+    }
+    p {
+      margin-bottom: 1.4rem;
+      font-size: 1.05rem;
+      color: #2f3a2f;
+    }
+    .small-meta {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #6a7a6a;
+      margin-bottom: 0.25rem;
+    }
+
+    /* ----- header / navigation ----- */
+    .site-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+      border-bottom: 1px solid #eae3d8;
+      padding-bottom: 1.2rem;
+    }
+    .logo {
+      font-family: 'Instrument Serif', serif;
+      font-size: 2.2rem;
+      font-weight: 400;
+      color: #2f4b2f;
+      letter-spacing: -0.02em;
+    }
+    .logo span {
+      background: #2f4b2f;
+      color: #faf7f2;
+      padding: 0.1rem 0.6rem;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      margin-left: 8px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      font-weight: 500;
+      font-size: 0.95rem;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #2f3a2f;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 0.2rem;
+      transition: 0.2s;
+    }
+    .nav-links a:hover {
+      border-bottom-color: #7f9f7f;
+      color: #1f2a1f;
+    }
+
+    /* about specific */
+    .about-hero {
+      background: #f3efe9;
+      padding: 2.5rem 2.8rem;
+      border-radius: 24px;
+      margin-bottom: 2.5rem;
+    }
+    .about-hero h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+    .about-hero p {
+      font-size: 1.2rem;
+      max-width: 80%;
+      color: #2d3a2d;
+    }
+
+    .mission-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0 2.5rem;
+    }
+    .mission-card {
+      background: #faf8f5;
+      padding: 1.8rem 1.5rem;
+      border-radius: 20px;
+      border: 1px solid #ece6dd;
+    }
+    .mission-card h3 {
+      margin-top: 0;
+      font-size: 1.4rem;
+    }
+    .mission-card p {
+      font-size: 0.98rem;
+      margin-bottom: 0;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 2rem;
+      margin: 1.5rem 0 2rem;
+    }
+    .team-member {
+      background: #faf8f5;
+      padding: 1.2rem 1.5rem;
+      border-radius: 20px;
+      border: 1px solid #ece6dd;
+      text-align: center;
+    }
+    .team-member .avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 40px;
+      background: #d9d0c2;
+      margin: 0 auto 0.8rem;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="35" r="20" fill="%23b7a78e" opacity="0.7"/><circle cx="50" cy="70" r="25" fill="%23a7927a" opacity="0.5"/></svg>');
+      background-size: cover;
+    }
+    .team-member h4 {
+      font-family: 'Instrument Serif', serif;
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+    .team-member .role {
+      font-size: 0.8rem;
+      color: #6a7a6a;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .stat-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem 3rem;
+      background: #f0ebe3;
+      padding: 1.8rem 2.5rem;
+      border-radius: 24px;
+      margin: 2rem 0;
+    }
+    .stat-item {
+      font-family: 'Instrument Serif', serif;
+      font-size: 2rem;
+      color: #1e2b1e;
+    }
+    .stat-item small {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      color: #4d604d;
+      display: block;
+      font-weight: 400;
+      margin-top: 0.2rem;
+    }
+
+    .timeline {
+      border-left: 3px solid #cbc0b0;
+      padding-left: 1.8rem;
+      margin: 1.5rem 0 2rem;
+    }
+    .timeline-item {
+      margin-bottom: 1.8rem;
+    }
+    .timeline-item .year {
+      font-weight: 600;
+      color: #2f4b2f;
+      font-size: 1.1rem;
+    }
+    .timeline-item p {
+      margin-top: 0.2rem;
+      margin-bottom: 0;
+      font-size: 1rem;
+    }
+
+    .newsletter {
+      background: #e8e1d7;
+      border-radius: 40px;
+      padding: 2.5rem 3rem;
+      margin: 3rem 0 1.5rem;
+      text-align: center;
+    }
+    .newsletter h3 {
+      margin-top: 0;
+      font-size: 2rem;
+    }
+    .newsletter input {
+      background: white;
+      border: 1px solid #c9bdb0;
+      padding: 0.7rem 1.2rem;
+      border-radius: 60px;
+      font-size: 1rem;
+      width: 260px;
+      max-width: 80%;
+      margin-right: 0.5rem;
+    }
+    .newsletter button {
+      background: #2f4b2f;
+      border: none;
+      color: white;
+      padding: 0.7rem 1.8rem;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: default;
+    }
+
+    footer {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 2px solid #e4ddd2;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      font-size: 0.9rem;
+      color: #5d6d5d;
+    }
+    footer a {
+      text-decoration: none;
+      color: #4d604d;
+    }
+
+    /* responsive */
+    @media (max-width: 800px) {
+      .container { padding: 1.5rem; }
+      .about-hero p { max-width: 100%; }
+      .site-header { flex-direction: column; gap: 0.8rem; }
+      .nav-links { flex-wrap: wrap; gap: 1rem; }
+    }
+    @media (max-width: 480px) {
+      body { padding: 0.8rem; }
+      h1 { font-size: 2.4rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- header (identical) -->
+  <header class="site-header">
+    <div class="logo">Green Apron <span>kitchen</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" style="border-bottom-color:#7f9f7f;">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="terms.html">Terms Of Privacy</a></li>
+      <li><a href="privacy.html">Privacy Policy</a></li>
+      <li><a href="cookies.html">Cookies Policy</a></li>
+    </ul>
+  </header>
+
+  <!-- ABOUT HERO -->
+  <section class="about-hero">
+    <h1>More than a recipe blog</h1>
+    <p>Green Apron Kitchen was born from a simple belief: cooking should be <em>understood</em>, not just followed. We teach the science, the history, and the intuition behind every dish.</p>
+  </section>
+
+  <!-- MISSION / VALUES -->
+  <h2>Our philosophy</h2>
+  <div class="mission-grid">
+    <div class="mission-card">
+      <h3>🌱 Season first</h3>
+      <p>We cook with what’s growing nearby. Our recipes adapt to farmers' markets, not the other way around.</p>
+    </div>
+    <div class="mission-card">
+      <h3>🔬 Technique over trends</h3>
+      <p>Knife skills, emulsion, fermentation — we focus on fundamentals that make every meal better.</p>
+    </div>
+    <div class="mission-card">
+      <h3>📖 Storytelling</h3>
+      <p>Every recipe has a story. We share the origins, the trials, and the happy accidents that led to our best versions.</p>
+    </div>
+    <div class="mission-card">
+      <h3>🤝 Community</h3>
+      <p>We answer every question, celebrate every success, and learn from every failure alongside our readers.</p>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="stat-list">
+    <div class="stat-item">200+ <small>recipes tested</small></div>
+    <div class="stat-item">1.2M <small>home cooks reached</small></div>
+    <div class="stat-item">47 <small>countries</small></div>
+    <div class="stat-item">12 <small>years of cooking</small></div>
+  </div>
+
+  <!-- TEAM -->
+  <h2>Meet the team</h2>
+  <p style="max-width: 70%;">We’re a small crew of chefs, writers, and food scientists who believe that everyone deserves to cook with confidence.</p>
+  <div class="team-grid">
+    <div class="team-member">
+      <div class="avatar"></div>
+      <h4>Elena Rossi</h4>
+      <div class="role">Founder & Recipe Director</div>
+      <p style="font-size: 0.9rem; margin-top: 0.4rem;">Former pastry chef, forever fermenter.</p>
+    </div>
+    <div class="team-member">
+      <div class="avatar"></div>
+      <h4>Marcus Chen</h4>
+      <div class="role">Food Science Editor</div>
+      <p style="font-size: 0.9rem; margin-top: 0.4rem;">Biochemist turned bread nerd.</p>
+    </div>
+    <div class="team-member">
+      <div class="avatar"></div>
+      <h4>Priya Kapoor</h4>
+      <div class="role">Vegetable Specialist</div>
+      <p style="font-size: 0.9rem; margin-top: 0.4rem;">Garden-to-table advocate.</p>
+    </div>
+    <div class="team-member">
+      <div class="avatar"></div>
+      <h4>James Okafor</h4>
+      <div class="role">Test Kitchen Lead</div>
+      <p style="font-size: 0.9rem; margin-top: 0.4rem;">Runs 50+ recipe tests per week.</p>
+    </div>
+  </div>
+
+  <!-- TIMELINE -->
+  <h2>Our journey</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="year">2018</div>
+      <p>Green Apron Kitchen started as a small newsletter for friends. First recipe: sourdough pancakes.</p>
+    </div>
+    <div class="timeline-item">
+      <div class="year">2020</div>
+      <p>Launched the website with 35 recipes. Gained a following during the home-baking boom.</p>
+    </div>
+    <div class="timeline-item">
+      <div class="year">2022</div>
+      <p>Added video tutorials and ingredient science deep-dives. Reached 500k monthly readers.</p>
+    </div>
+    <div class="timeline-item">
+      <div class="year">2025</div>
+      <p>Published our first cookbook (forthcoming). Still posting free recipes every week.</p>
+    </div>
+  </div>
+
+  <!-- WHAT WE BELIEVE (text) -->
+  <h2>What we stand for</h2>
+  <p><strong>Zero food waste</strong> — we design recipes that use every part of the ingredient. From carrot tops to citrus peels.</p>
+  <p><strong>Realistic cooking</strong> — we test every recipe in home kitchens with standard equipment. No sous-vide required.</p>
+  <p><strong>Inclusivity</strong> — our recipes are vegetarian-forward, with easy swaps for dietary needs. We believe good food is for everyone.</p>
+
+  <!-- NEWSLETTER (same as homepage) -->
+  <div class="newsletter">
+    <h3>Weekly kitchen notes</h3>
+    <p style="max-width:600px; margin:0 auto 1.2rem;">One email per week with recipes, technique tips, and seasonal inspiration. No fluff.</p>
+    <input type="email" placeholder="you@example.com" aria-label="email" />
+    <button>Subscribe</button>
+    <p style="font-size:0.8rem; margin-top:1rem; opacity:0.7;">We respect your inbox. Unsubscribe anytime.</p>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>© 2026 Green Apron Kitchen · crafted with care</div>
+    <div style="display:flex; gap:1.5rem;">
+      <a href="#">about</a>
+      <a href="#">privacy</a>
+      <a href="#">contact</a>
+    </div>
+  </footer>
+
+</div>
+<!-- end container -->
+</body>
+</html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Green Apron Kitchen · Contact</title>
+  <!-- Font & minimal icons (only for visual hierarchy) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    /* ----- unique, reading-first design system (same as main) ----- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #faf7f2;
+      color: #1f2a1f;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      line-height: 1.7;
+      padding: 2rem 1.5rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 2.5rem 3rem;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
+      border-radius: 28px;
+    }
+
+    /* typography – serif for headlines, clean sans for body */
+    h1, h2, h3, h4 {
+      font-family: 'Instrument Serif', serif;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+      color: #1e2b1e;
+    }
+
+    h1 {
+      font-size: 3.2rem;
+      margin-bottom: 0.4rem;
+    }
+    h2 {
+      font-size: 2.2rem;
+      margin-top: 2.8rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #e4ddd2;
+      padding-bottom: 0.4rem;
+    }
+    h3 {
+      font-size: 1.6rem;
+      margin-top: 2rem;
+      margin-bottom: 0.6rem;
+      font-weight: 500;
+    }
+    p {
+      margin-bottom: 1.4rem;
+      font-size: 1.05rem;
+      color: #2f3a2f;
+    }
+    .small-meta {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #6a7a6a;
+      margin-bottom: 0.25rem;
+    }
+
+    /* ----- header / navigation (minimal, clean) ----- */
+    .site-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+      border-bottom: 1px solid #eae3d8;
+      padding-bottom: 1.2rem;
+    }
+    .logo {
+      font-family: 'Instrument Serif', serif;
+      font-size: 2.2rem;
+      font-weight: 400;
+      color: #2f4b2f;
+      letter-spacing: -0.02em;
+    }
+    .logo span {
+      background: #2f4b2f;
+      color: #faf7f2;
+      padding: 0.1rem 0.6rem;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      margin-left: 8px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #2f3a2f;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 0.2rem;
+      transition: 0.2s;
+    }
+    .nav-links a:hover {
+      border-bottom-color: #7f9f7f;
+      color: #1f2a1f;
+    }
+
+    /* contact specific */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin: 2.5rem 0 3rem;
+    }
+    .contact-info {
+      background: #f3efe9;
+      padding: 2rem 2.2rem;
+      border-radius: 24px;
+    }
+    .contact-info h3 {
+      margin-top: 0;
+      font-size: 1.8rem;
+    }
+    .contact-info p {
+      margin-bottom: 0.8rem;
+    }
+    .contact-info .detail {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin: 1rem 0;
+    }
+    .contact-info .detail svg {
+      flex-shrink: 0;
+    }
+    .contact-form {
+      background: #faf8f5;
+      padding: 2rem 2.2rem;
+      border-radius: 24px;
+      border: 1px solid #ece6dd;
+    }
+    .contact-form label {
+      display: block;
+      font-weight: 600;
+      margin-top: 1.2rem;
+      font-size: 0.95rem;
+      color: #1f2a1f;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.7rem 1rem;
+      margin-top: 0.3rem;
+      border: 1px solid #d6cdbf;
+      border-radius: 16px;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      background: white;
+      transition: 0.15s;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: 2px solid #7f9f7f;
+      border-color: transparent;
+    }
+    .contact-form button {
+      background: #2f4b2f;
+      border: none;
+      color: white;
+      padding: 0.8rem 2.8rem;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-top: 1.8rem;
+      cursor: default;
+      transition: 0.15s;
+    }
+    .contact-form button:hover {
+      background: #1f3a1f;
+    }
+
+    .map-placeholder {
+      background: #d9d0c2;
+      height: 200px;
+      border-radius: 24px;
+      margin: 2rem 0 1rem;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200"><rect width="600" height="200" fill="%23d9d0c2"/><rect x="120" y="40" width="80" height="80" fill="%23b7a78e" opacity="0.5"/><rect x="300" y="70" width="100" height="60" fill="%23a7927a" opacity="0.5"/><circle cx="480" cy="100" r="40" fill="%2396846b" opacity="0.4"/></svg>');
+      background-size: cover;
+      border: 1px solid #cfc3b3;
+    }
+
+    /* footer */
+    footer {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 2px solid #e4ddd2;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      font-size: 0.9rem;
+      color: #5d6d5d;
+    }
+
+    @media (max-width: 800px) {
+      .container { padding: 1.5rem; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .site-header { flex-direction: column; gap: 0.8rem; }
+      .nav-links { flex-wrap: wrap; gap: 1rem; }
+    }
+    @media (max-width: 480px) {
+      body { padding: 0.8rem; }
+      h1 { font-size: 2.4rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- header -->
+  <header class="site-header">
+    <div class="logo">Green Apron <span>kitchen</span></div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="terms.html">Terms Of Privacy</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="cookies.html">Cookies Policy</a>
+    </div>
+  </header>
+
+  <!-- page title -->
+  <h1>Contact</h1>
+  <p style="max-width: 700px;">We’d love to hear from you. Whether you have a question about a recipe, want to collaborate, or just want to say hello — reach out.</p>
+
+  <!-- contact grid: info + form -->
+  <div class="contact-grid">
+    <!-- left: contact info -->
+    <div class="contact-info">
+      <h3>Say hello</h3>
+      <p>We reply within 24 hours, usually sooner. For press or partnership inquiries, please use the form or email us directly.</p>
+      <div class="detail">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2f4b2f" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span><strong>Email</strong> hello@greenapron.kitchen</span>
+      </div>
+      <div class="detail">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2f4b2f" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span><strong>Kitchen</strong> 42 Green St, Portland, ME</span>
+      </div>
+      <div class="detail">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2f4b2f" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2.18"/><line x1="8" y1="2" x2="8" y2="22"/><line x1="16" y1="2" x2="16" y2="22"/></svg>
+        <span><strong>Social</strong> @greenapronkitchen</span>
+      </div>
+      <div style="margin-top: 1.8rem; border-top: 1px solid #d6cdbf; padding-top: 1.2rem;">
+        <p style="font-size: 0.95rem; color: #4d604d;"><strong>✷  quick response</strong> — we check messages throughout the day.</p>
+      </div>
+    </div>
+
+    <!-- right: contact form -->
+    <div class="contact-form">
+      <h3 style="margin-top: 0; font-size: 1.8rem;">Send a note</h3>
+      <form>
+        <label for="name">Your name</label>
+        <input type="text" id="name" placeholder="e.g. Jamie" />
+
+        <label for="email">Email address</label>
+        <input type="email" id="email" placeholder="you@example.com" />
+
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" placeholder="Recipe question, collaboration, ..." />
+
+        <label for="message">Message</label>
+        <textarea id="message" rows="4" placeholder="Tell us what’s on your mind..."></textarea>
+
+        <button type="submit">Send message</button>
+        <p style="font-size: 0.85rem; margin-top: 0.8rem; color: #6a7a6a;">We’ll never share your email. Unsubscribe anytime.</p>
+      </form>
+    </div>
+  </div>
+
+  <!-- map / location (visual only) -->
+  <div class="map-placeholder" role="img" aria-label="map indicating Green Apron Kitchen location"></div>
+  <p style="font-size: 0.95rem; color: #4d604d; text-align: center;">📍 42 Green Street · Portland, Maine · open by appointment</p>
+
+  <!-- extra: FAQ / quick links (contact specific) -->
+  <div style="background: #f3efe9; border-radius: 24px; padding: 2rem 2.5rem; margin: 2.5rem 0;">
+    <h3 style="margin-top: 0;">Before you write — quick answers</h3>
+    <div style="display: flex; flex-wrap: wrap; gap: 1.2rem 2.5rem; margin-top: 0.5rem;">
+      <div><strong>Recipe substitutions?</strong> Check our ingredient guide.</div>
+      <div><strong>Collaboration?</strong> We love working with brands that align with our values.</div>
+      <div><strong>Press kit?</strong> Email us for media assets.</div>
+      <div><strong>Technical issue?</strong> Let us know and we’ll fix it.</div>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <footer>
+    <div>© 2026 Green Apron Kitchen · crafted with care</div>
+    <div style="display:flex; gap:1.5rem;">
+      <a href="#" style="text-decoration:none; color:#4d604d;">about</a>
+      <a href="#" style="text-decoration:none; color:#4d604d;">privacy</a>
+      <a href="#" style="text-decoration:none; color:#4d604d;">contact</a>
+    </div>
+  </footer>
+
+</div>
+<!-- end container -->
+</body>
+</html>
